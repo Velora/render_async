@@ -22,6 +22,7 @@
       e.target.removeEventListener(e.type, arguments.callee);
       callback();
     });
+    document.addEventListener("DOMContentLoaded", callback);
     <% else %>
     document.addEventListener("DOMContentLoaded", callback);
     <% end %>

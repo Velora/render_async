@@ -24,6 +24,7 @@ if (window.jQuery) {
       } else {
         <% if turbolinks %>
         $(document).one('page:load', callback);
+        $(document).ready(callback);
         <% else %>
         $(document).ready(callback);
         <% end %>

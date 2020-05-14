@@ -23,7 +23,7 @@ if (window.jQuery) {
         callback();
       } else {
         <% if turbolinks %>
-        $(document).one('turbolinks:load', callback);
+        $(document).one('page:load', callback);
         <% else %>
         $(document).ready(callback);
         <% end %>
@@ -104,7 +104,7 @@ if (window.jQuery) {
     }
 
     <% if turbolinks %>
-    $(document).one('turbolinks:visit', function() {
+    $(document).one('page:before-change', function() {
       if (typeof(_interval) === 'number') {
         clearInterval(_interval)
         _interval = undefined;

@@ -114,7 +114,7 @@
   }
 
   <% if turbolinks %>
-  document.addEventListener("page:fetch", function(e) {
+  document.addEventListener("page:before-change", function(e) {
     if (typeof(_interval) === 'number') {
       clearInterval(_interval);
       _interval = undefined;

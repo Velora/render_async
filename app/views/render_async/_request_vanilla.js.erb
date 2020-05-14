@@ -18,7 +18,7 @@
 
   function _runAfterDocumentLoaded(callback) {
     <% if turbolinks %>
-    document.addEventListener("turbolinks:load", function(e) {
+    document.addEventListener("page:load", function(e) {
       e.target.removeEventListener(e.type, arguments.callee);
       callback();
     });
@@ -114,7 +114,7 @@
   }
 
   <% if turbolinks %>
-  document.addEventListener("turbolinks:visit", function(e) {
+  document.addEventListener("page:fetch", function(e) {
     if (typeof(_interval) === 'number') {
       clearInterval(_interval);
       _interval = undefined;
